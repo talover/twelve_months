@@ -1,6 +1,6 @@
 @media (max-width:1200px) {
 	.main_container {
-		max-width:1024px;
+		max-width:90%;
 	}
 
 	#header {
@@ -88,10 +88,6 @@
 	}// END #last_viewed
 }
 @media (max-width:1024px) {
-	.main_container {
-		max-width:900px;
-	}
-
 	#header {
 	    .content {
 	        .search {
@@ -157,10 +153,10 @@
 	        }
 	    }
 	    .owl-controls {
-	        max-width: 900px;
+	        max-width: 90%;
 
 	        .owl-pagination {
-	            max-width: 900px;
+	            max-width: 90%;
 	        }
 	    }
 	}// END #baner_block
@@ -225,8 +221,13 @@
 }
 
 @media (max-width:900px) {
-	.main_container {
-		max-width:768px;
+
+	#nav {
+		display: none;
+	}
+
+	#nav_mob {
+		display: block;
 	}
 
 	#header {
@@ -290,9 +291,6 @@
 }
 
 @media (max-width:768px) {
-	.main_container {
-		max-width:620px;
-	}
 
 	#header {
 		header {
@@ -327,9 +325,6 @@
 }
 
 @media (max-width:620px) {
-	.main_container {
-		max-width:460px;
-	}
 
 	#main {
 		padding-bottom: 10px;
@@ -387,9 +382,6 @@
 }
 
 @media (max-width:489px) {
-	.main_container {
-		max-width:460px;
-	}
 
 	#main {
 		padding-bottom: 10px;
@@ -403,6 +395,7 @@
 		}
 	    .content {
 	        .search {
+	        	height: auto;
 	            p {
 	                .tel {
 	                    font-size: 13pt;
@@ -417,6 +410,9 @@
 	            ul {
 	            	li {
 	            		&.f-right {
+	            			float: none;
+	            			clear: both;
+
 	            			p {
 	            				font-size: 9pt;
 	            			}
@@ -424,9 +420,32 @@
 	            	}
 	            }
 	        }// END .search
+
+		    & > .f-right , & > .f_left {
+		    	float: none;
+		    	margin: auto;
+		    	margin-bottom: 10px;
+		    	position: relative;
+		    	overflow: hidden;
+		    	clear: both;
+		    }
+
+		    & > .f-left {
+		    	margin: 0 0 10px 10%!important;
+		    	float: none!important;
+		    	height: 156px;
+		    	width: 100%;
+
+			    #logo {
+			    	position: absolute;
+			    	right: 0;
+			    	top: 20px;
+			    	left: 0;
+			    	margin: auto;
+			    }
+		    }
 	    }// END .content
 	}// END #header
-
 
 	#buy_as_you_wish {
 	    ul {
@@ -434,7 +453,7 @@
 	            a {
 	                height: 30px;
 	                line-height: 30px;
-	                font-size: 10pt;
+	                font-size: 6pt;
 	            }
 
 	        }
@@ -444,4 +463,68 @@
 	#footer {
 		display: none;
 	}// END #footer
+
+	#second_baner {
+	    .item {
+	        height: 200px;
+
+	        article {
+	            font-size: 16pt;
+
+	            &.bottom {
+	                bottom: 10px;
+	            }
+
+	            &.right {
+	                right: 10px;
+	            }
+
+	            &.top {
+	                top:10px;
+	            }
+
+	            &.left {
+	                left: 10px;
+	            }
+
+	            span {
+	                font-size: 60pt;
+	            }
+	        }
+	    }
+	}// END #baner_block
+
+	#baner_block {
+	    .item {
+	        height: 250px;
+
+	        article {
+	            font-size: 16pt;
+
+	            &.bottom {
+	                bottom: 10px;
+	            }
+
+	            &.right {
+	                right: 10px;
+	                text-align: right;
+	            }
+
+	            &.top {
+	                top:10px;
+	            }
+
+	            &.left {
+	                left: 10px;
+	            }
+	        }
+	    }
+	    .owl-controls {
+	        max-width:90%;
+
+	        .owl-pagination {
+	            max-width: 90%;
+	        }
+	    }
+	}// END #baner_block
 }
