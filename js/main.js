@@ -6,12 +6,8 @@ $(document).ready(function() {
 	BackThird();
 	thirdDrop();
 	BackAll();
-	resize_slider();
-});
-
-$( window ).resize(function() {
-	resize_slider();
-	resize_slider();
+	MoreNav();
+	orderCallPupup();
 });
 
 function slider() {
@@ -80,11 +76,6 @@ function slider() {
 	});
 }
 
-function resize_slider() {
-	$(".owlCarousel").data('owlCarousel').destroy();
-	slider();
-}
-
 function DropDown() {
 	$('#nav_mob i.arrow').on('click',function(){
 		$(this).toggleClass('active');
@@ -120,5 +111,18 @@ function BackThird() {
 function BackAll() {
 	$('.drop_down .home').on('click',function(){
 		$('.second_drop_down ,.third_drop_down').fadeOut();
+	});
+}
+
+function MoreNav() {
+	$("#nav .more > a").on('click', function(){
+		$(this).parent().toggleClass('active');
+		$(this).parent().find('ul').slideToggle();
+	});
+}
+
+function orderCallPupup() {
+	$("#order_call_btn").click(function() {
+		$.fancybox( {href : '#order_call', padding : 0, wrapCSS: "popup"} );
 	});
 }

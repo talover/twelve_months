@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,cyrillic-ext);
 @import "owl.carousel.css";
+@import "jquery.fancybox.css";
+
 @font-face {
     font-family: 'weblysleek_uisemilight';
     src: url('fonts/weblysleekuisl-webfont.eot');
@@ -10,7 +12,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'weblysleek_uisemibold';
     src: url('fonts/weblysleekuisb-webfont.eot');
@@ -20,7 +21,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: 'weblysleek_uilight';
@@ -245,15 +245,7 @@ ul {
     display: block;
 }
 
-.sprite-1  {.stitches-sprite(-5px, -5px, 196px, 120px);}
-.sprite-2  {.stitches-sprite(-234px, -125px, 8px, 5px);}
-.sprite-3  {.stitches-sprite(-252px, -125px, 23px, 23px);}
-.sprite-4  {.stitches-sprite(-248px, -158px, 33px, 33px);}
-.sprite-5  {.stitches-sprite(-90px, -201px, 15px, 21px);}
-.sprite-6  {.stitches-sprite(-220px, -201px, 33px, 35px);}
-.sprite-7  {.stitches-sprite(-5px, -246px, 35px, 30px);}
-.sprite-8  {.stitches-sprite(-153px, -201px, 18px, 48px);}
-.sprite-9  {.stitches-sprite(-263px, -201px, 18px, 48px);}
+.sprite-1 {.stitches-sprite(-5px, -5px, 196px, 120px);}
 .sprite-10 {.stitches-sprite(-5px, -135px, 75px, 81px);}
 .sprite-11 {.stitches-sprite(-211px, -5px, 26px, 13px);}
 .sprite-12 {.stitches-sprite(-211px, -28px, 16px, 27px);}
@@ -264,13 +256,21 @@ ul {
 .sprite-17 {.stitches-sprite(-121px, -156px, 25px, 16px);}
 .sprite-18 {.stitches-sprite(-156px, -156px, 23px, 21px);}
 .sprite-19 {.stitches-sprite(-189px, -156px, 24px, 17px);}
+.sprite-2 {.stitches-sprite(-234px, -125px, 8px, 5px);}
 .sprite-20 {.stitches-sprite(-121px, -183px, 22px, 22px);}
 .sprite-21 {.stitches-sprite(-223px, -156px, 15px, 23px);}
-.sprite-22 {.stitches-sprite(-189px, -183px, 21px, 21px);}
-.sprite-23 {.stitches-sprite(-247px, -5px, 30px, 30px);}
-.sprite-24 {.stitches-sprite(-244px, -45px, 30px, 30px);}
-.sprite-25 {.stitches-sprite(-244px, -85px, 30px, 30px);}
-
+.sprite-22 {.stitches-sprite(-90px, -189px, 21px, 21px);}
+.sprite-23 {.stitches-sprite(-153px, -189px, 30px, 30px);}
+.sprite-24 {.stitches-sprite(-193px, -189px, 30px, 30px);}
+.sprite-25 {.stitches-sprite(-247px, -5px, 30px, 30px);}
+.sprite-26 {.stitches-sprite(-237px, -45px, 8px, 5px);}
+.sprite-3 {.stitches-sprite(-255px, -45px, 23px, 23px);}
+.sprite-4 {.stitches-sprite(-244px, -78px, 33px, 33px);}
+.sprite-5 {.stitches-sprite(-252px, -121px, 15px, 21px);}
+.sprite-6 {.stitches-sprite(-248px, -152px, 33px, 35px);}
+.sprite-7 {.stitches-sprite(-233px, -197px, 35px, 30px);}
+.sprite-8 {.stitches-sprite(-288px, -5px, 18px, 48px);}
+.sprite-9 {.stitches-sprite(-288px, -63px, 18px, 48px);}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -401,10 +401,12 @@ ul {
 
                     a {
                         color:#fff;
-                        text-decoration: underline;
+                        text-decoration: none;
+                         border-bottom: 1px dashed #fff;
 
                         &:hover {
-                            text-decoration: none;
+                            color:#bf2e22;
+                            border-bottom: 1px dashed #bf2e22;
                         }
                     }
                 }
@@ -626,7 +628,7 @@ ul {
                     }
 
                     &:hover {
-                        background: rgba(0,0,0, 0.5);
+                        background: rgba(255,255,255, 0.4);
                         // background: #828282;
                     }
                 }
@@ -648,14 +650,16 @@ ul {
                             float: left;
                             width: 33.3%;
                             padding-bottom: 20px;
+                            padding-right: 20px;
+                            .box-sizing(border-box);
 
-                            i {
+                            & > i {
                                 width: 33px;
                                 height: 33px;
                                 background: #bf2e22;
                                 float: left;
                                 display: block;
-                                margin: 0 9px 9px 0;
+                                margin: 0 0 9px 0;
                                 position: relative;
 
                                 &:after {
@@ -742,11 +746,12 @@ ul {
                                 }
                             }
 
-                            ul {
-                                float: left;
+                            & > ul {
+                                width: auto;
+                                margin: -5px 0 0 42px;
                                 margin-top:-5px;
 
-                                li {
+                                & > li {
                                     line-height: 1.1;
 
                                     &:first-child {
@@ -760,9 +765,51 @@ ul {
                                         text-decoration: none;
                                         font-size: 10.5pt;
                                         color:#000;
+                                        white-space: nowrap; /* Запрещаем перенос строк */
+                                        overflow: hidden; /* Обрезаем все, что не помещается в область */
+                                        text-overflow: ellipsis; /* Добавляем многоточие */
+                                        display: block;
+                                        line-height: 1.2;
 
                                         &:hover {
                                             text-decoration: underline;
+                                            color: #c52823;
+                                        }
+                                    }
+
+                                    &.more {
+                                        & > a {
+                                            margin-left: 20px;
+                                            border-bottom: 1px dashed #000;
+                                            display: inline;
+                                            text-decoration: none;
+                                        }
+
+                                        &:hover , &.active {
+                                            & > a {
+                                                color:#999;
+                                                border-bottom: 1px dashed #999;
+
+                                            }
+                                        }
+
+                                        &.active {
+                                            i {
+                                                .sprite-26;
+                                            }
+                                        }
+
+                                        i {
+                                            .sprite;
+                                            .sprite-2;
+                                            display: inline-block;
+                                            vertical-align: middle;
+                                            margin-left: 3px;
+                                        }
+
+                                        ul {
+                                            margin:5px 0 0 20px;
+                                            display: none;
                                         }
                                     }
                                 }
@@ -786,6 +833,7 @@ ul {
         color:#fff;
         margin: 0;
         line-height: 40px;
+
     }
 
     i.arrow {
@@ -1416,3 +1464,10 @@ ul {
         }
     }
 }// END #footer
+
+
+#order_call {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
