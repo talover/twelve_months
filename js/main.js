@@ -7,7 +7,8 @@ $(document).ready(function() {
 	thirdDrop();
 	BackAll();
 	MoreNav();
-	orderCallPupup();
+	Popup();
+	FormStyler();
 });
 
 function slider() {
@@ -22,7 +23,8 @@ function slider() {
 		[768, 2],
 		[900, 2],
 		[1024, 2],
-		[1200, 2]
+		[1200, 2],
+		[1300, 3]
 		],
 	});
 
@@ -36,7 +38,8 @@ function slider() {
 		[768, 2],
 		[900, 2],
 		[1024, 2],
-		[1200, 2]
+		[1200, 2],
+		[1300, 3]
 		],
 		autoPlay:3000
 	});
@@ -121,8 +124,23 @@ function MoreNav() {
 	});
 }
 
-function orderCallPupup() {
+function Popup() {
 	$("#order_call_btn").click(function() {
 		$.fancybox( {href : '#order_call', padding : 0, wrapCSS: "popup"} );
 	});
+	$("#btn_map").click(function() {
+		$.fancybox( {href : '#map_block', padding : 0, wrapCSS: "popup"} );
+	});
+	$("#btn_delivery").click(function() {
+		$.fancybox( {href : '#delivery_block', padding : 0, wrapCSS: "popup"} );
+	});
+	$("#btn_advice").click(function() {
+		$.fancybox( {href : '#advice_block', padding : 0, wrapCSS: "popup"} );
+	});
+}
+
+function FormStyler() {
+	setTimeout(function() {  
+		$('input, select').styler();  
+	}, 10);
 }

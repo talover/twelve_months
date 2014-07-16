@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,cyrillic-ext);
 @import "owl.carousel.css";
 @import "jquery.fancybox.css";
+@import "jquery.formstyler.css";
 
 @font-face {
     font-family: 'weblysleek_uisemilight';
@@ -338,23 +339,40 @@ ul {
                 position: relative;
                 text-decoration: none;
 
-                p {
+                .jq-selectbox  {
                     margin: 0;
-                    position: absolute;
-                    top: 65px;
-                    right: 0;
-                    font-size: 10.5pt;
-                    color: #000;
-                    font-style: italic;
+                    position: absolute!important;
+                    top: 60px;
+                    right: -10px;
 
-                    i {
-                        .sprite;
-                        .sprite-2;
-                        display: inline-block;
-                        vertical-align: middle;
-                        margin-left: 5px;
+                    .jq-selectbox__select {
+                        border: 0;
+                        background: none;
+                        box-shadow: none;
+                        padding: 0 25px 0 0 ;
+
+                        .jq-selectbox__select-text {
+                            font-style: italic;
+                            font-family: 'weblysleek_uisemilight';
+                            font-size: 10.5pt;
+                            color:#000;
+                            padding-right: 5px;
+                        }
+
+                        .jq-selectbox__trigger {
+                            width: 10px;
+                            border: 0;
+
+                            .jq-selectbox__trigger-arrow {
+                                .sprite;
+                                .sprite-2;
+                                border: 0;
+                                opacity: 1;
+                            }
+                        }
                     }
                 }
+
             }
         }
 
@@ -394,10 +412,8 @@ ul {
                     text-align: right;
                     font-style: italic;
                     color: #fff;
-                    font-size: 9pt;
-                    padding-top: 3px;
-                    font-family: 'weblysleek_uisemibold_italic';
-                    text-transform: uppercase;
+                    font-size: 11pt;
+                    // font-family: 'weblysleek_uisemibold_italic';
 
                     a {
                         color:#fff;
@@ -432,7 +448,7 @@ ul {
                                     text-decoration: underline;
 
                                     &:hover {
-                                        text-decoration: none;
+                                        color: #bf2e22;
                                     }
 
                                     &:after {
@@ -535,7 +551,7 @@ ul {
                             letter-spacing: 1px;
 
                             &:hover {
-                                text-decoration: none;
+                                color: #bf2e22;
                             }
                         }
 
@@ -550,6 +566,19 @@ ul {
                     &.enter {
                         i {
                             .sprite-6;
+                        }
+
+                        p {
+                            a {
+                                text-decoration: none;
+                                display: block;
+                                border-bottom: 1px dashed #fff;
+                                float: left;
+
+                                &:hover {
+                                    border-color:#bf2e22;
+                                }
+                            }
                         }
                     }
 
@@ -580,7 +609,7 @@ ul {
         & > ul {
             & > li {
                 float: left;
-                width: 12.5%;
+                width: 14.28%;
 
                 &:hover {
                     .drop_down {
@@ -652,6 +681,24 @@ ul {
                             padding-bottom: 20px;
                             padding-right: 20px;
                             .box-sizing(border-box);
+                            position: relative;
+
+                            &:first-child + * + *  {
+
+                                .toolt_tip_cont {
+                                    .tool_tip_block {
+                                        left: -365px;
+
+                                        &:after {
+                                            top: 58px;
+                                            right: -16px;
+                                            left: auto;
+                                            border-color: rgba(241, 241, 241, 0);
+                                            border-left-color: #999;
+                                        }
+                                    }
+                                }
+                            }
 
                             & > i {
                                 width: 33px;
@@ -753,6 +800,7 @@ ul {
 
                                 & > li {
                                     line-height: 1.1;
+                                    position: relative;
 
                                     &:first-child {
                                         a {
@@ -768,12 +816,74 @@ ul {
                                         white-space: nowrap; /* Запрещаем перенос строк */
                                         overflow: hidden; /* Обрезаем все, что не помещается в область */
                                         text-overflow: ellipsis; /* Добавляем многоточие */
-                                        display: block;
+                                        display: inline-table;
                                         line-height: 1.2;
 
                                         &:hover {
                                             text-decoration: underline;
                                             color: #c52823;
+                                        }
+                                    }
+
+                                    .toolt_tip_cont {
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        vertical-align: top;
+                                        height: 22px;
+                                        width: 15px;
+                                        position: relative;
+
+                                        &:hover {
+                                            color: #bf2e22;
+
+                                            .tool_tip_block {
+                                                display: block;
+                                            }
+                                        }
+
+
+                                        .tool_tip_block {
+                                            position: absolute;
+                                            top: -47px;
+                                            right: -365px;
+                                            display: block;
+                                            background: #999;
+                                            padding: 10px;
+                                            z-index: 1000;
+                                            width: 335px;
+                                            display: none;
+
+                                            &:after {
+                                                top: 58px;
+                                                left: -16px;
+                                                border: solid transparent;
+                                                content: " ";
+                                                height: 0;
+                                                width: 0;
+                                                position: absolute;
+                                                pointer-events: none;
+                                                border-color: rgba(241, 241, 241, 0);
+                                                border-right-color: #999;
+                                                border-width: 8px;
+                                                margin-top: -8px;
+                                            }
+
+                                            .img_block {
+                                                display: inline-block;
+                                                vertical-align: top;
+                                                width: 111px;
+                                                margin-right: 10px;
+                                                float: left;
+                                            }
+
+                                            .text_block {
+                                                width: auto;
+                                                display:block;
+                                                vertical-align: top;
+                                                margin: 0 0 0 121px;
+                                                color:#f1f1f1;
+                                                font-size: 10pt;
+                                            }
                                         }
                                     }
 
@@ -1085,6 +1195,7 @@ ul {
         }
     }
 }// END  #nav
+
 #baner_block {
     .item {
         height: 400px;
@@ -1118,6 +1229,7 @@ ul {
             }
         }
     }
+
     .owl-controls {
         overflow: hidden;
         width: 100%;
@@ -1182,7 +1294,7 @@ ul {
                 &.on_site {background: #bf2e22;}
                 &.on_tel {background: #e9b62c;}
                 &.on_shop {background: #477fbb;}
-                &.delivery {background: #539354;}
+                &.credit {background: #539354;}
 
                 span {
                     position: absolute;
@@ -1211,6 +1323,22 @@ ul {
                 }
             }
 
+        }
+    }
+
+    .delivery {
+        float: right;
+        font-family: 'weblysleek_uilight_italic';
+        color: #000;
+        font-size: 17.5pt;
+        margin-top: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid #000;
+        line-height: 1;
+
+        &:hover {
+            color:#bf2e22;
+            border-color:#bf2e22;
         }
     }
 }// END #buy_as_you_wish
@@ -1273,8 +1401,35 @@ ul {
             }
         }
     }
+
     .owl-controls {
-        display: none!important;
+        overflow: hidden;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+
+        .owl-buttons {display: none;}
+
+        .owl-pagination {
+            float: right;
+            margin: 7px 0 0 0;
+            max-width: 1200px;
+
+            .owl-page {
+                display: inline-block;
+                vertical-align: top;
+                width: 8px;
+                height: 8px;
+                .border-radius(100%);
+                background: #cdcdcd;
+                .transition(0.5s , all);
+                margin-right: 5px;
+
+                &:hover , &.active {
+                    background: #ff0000;
+                }
+            }
+        }
     }
 }// END #baner_block
 
@@ -1315,7 +1470,8 @@ ul {
                 float: right;
 
                 &:hover {
-                    text-decoration: none;
+                    color: #bf2e22;
+                    border-color:#bf2e22;
                 }
             }
         }
@@ -1419,23 +1575,53 @@ ul {
             }
         }
     }
-    .owl-buttons {
-        & > div {
-            position: absolute;
-            .sprite;
-            top:50%;
-            overflow: hidden;
-            text-indent: -999px;
-            margin-top: -24px;
 
-            &.owl-prev {
-                .sprite-9;
-                left: -30px;
+    .owl-controls {
+        overflow: hidden;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+
+        .owl-buttons {
+            & > div {
+                position: absolute;
+                .sprite;
+                top:50%;
+                overflow: hidden;
+                text-indent: -999px;
+                margin-top: -24px;
+
+                &.owl-prev {
+                    .sprite-9;
+                    left: -30px;
+                }
+
+                &.owl-next {
+                    .sprite-8;
+                    right: -30px;
+                }
             }
+        }
 
-            &.owl-next {
-                .sprite-8;
-                right: -30px;
+        .owl-pagination {
+            margin: 7px 0 0 0;
+            position: absolute;
+            right: 0;
+            bottom: -40px;
+
+            .owl-page {
+                display: inline-block;
+                vertical-align: top;
+                width: 8px;
+                height: 8px;
+                .border-radius(100%);
+                background: #cdcdcd;
+                .transition(0.5s , all);
+                margin-right: 5px;
+
+                &:hover , &.active {
+                    background: #ff0000;
+                }
             }
         }
     }
@@ -1466,8 +1652,15 @@ ul {
 }// END #footer
 
 
-#order_call {
+.popup_block {
     display: none;
     padding: 20px;
     text-align: center;
+}
+
+#map {
+    width: 600px;
+    height: 400px;
+    padding: 0;
+    margin: auto;
 }
