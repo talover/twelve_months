@@ -1,18 +1,19 @@
 $(document).ready(function() {
-	slider();
-	DropDown();
-	secondDrop();
-	BackSecond();
-	BackThird();
-	thirdDrop();
-	BackAll();
-	MoreNav();
-	Popup();
-	FormStyler();
+		slider();
+		DropDown();
+		secondDrop();
+		BackSecond();
+		BackThird();
+		thirdDrop();
+		BackAll();
+		MoreNav();
+		Popup();
+		FormStyler();
+		sorting_tab();
+		scroll();   
 });
 
 function slider() {
- 
 	$("#baner_block").owlCarousel({
 		navigation : true, // Show next and prev buttons
 		slideSpeed : 500,
@@ -23,8 +24,7 @@ function slider() {
 		[768, 2],
 		[900, 2],
 		[1024, 2],
-		[1200, 2],
-		[1300, 3]
+		[1200, 2]
 		],
 	});
 
@@ -38,8 +38,7 @@ function slider() {
 		[768, 2],
 		[900, 2],
 		[1024, 2],
-		[1200, 2],
-		[1300, 3]
+		[1200, 2]
 		],
 		autoPlay:3000
 	});
@@ -144,3 +143,32 @@ function FormStyler() {
 		$('input, select').styler();  
 	}, 10);
 }
+
+function sorting_tab() {
+	$('#catalog_block .sorting a').on('click',function(){
+		var tab = $(this).data('sorting');
+		$('.sorting_tab').removeClass('active');
+		$('#catalog_block .sorting a').removeClass('active');
+		$(tab).addClass('active');
+		$(this).addClass('active');
+	});
+}
+
+function scroll() {                          
+    $("#scroll").mCustomScrollbar({
+        axis:"x",
+        theme:"inset-dark",
+        advanced:{autoExpandHorizontalScroll:true}
+    });
+
+    $('.alphabet_list a').on('click', function(){
+    	var alphabet = $(this).data('alphabet');
+
+    	$("#scroll").mCustomScrollbar("scrollTo",alphabet);
+    	$('.letter_block').removeClass('active');
+    	$(alphabet).find('.letter_block').addClass('active');
+    	$('.alphabet_list a').removeClass('active');
+    	$(this).addClass('active');
+    });
+}
+
