@@ -10,7 +10,9 @@ $(document).ready(function() {
 		Popup();
 		FormStyler();
 		sorting_tab();
-		scroll();   
+		scroll();  
+		contacts_tab_height();
+		contacts_tab();
 });
 
 function slider() {
@@ -170,5 +172,42 @@ function scroll() {
     	$('.alphabet_list a').removeClass('active');
     	$(this).addClass('active');
     });
+}
+
+function contacts_tab_height() {
+	$('.f_right .contacts_tab').each(function(){
+		var w = $(this).height() + 30 ,
+			h = w/2;
+		$(this).css({
+			height:w,
+			margin:-h
+		});
+	});
+}
+
+function contacts_tab() {
+	$('.contacts_list a').on('click',function(){
+		var coordinates = $(this).data('coordinates'),
+			contactsList = $(this).data('contactsList');
+
+		$('.contacts_list li').removeClass('active');
+		$(this).parent().addClass('active');
+		$('.coordinates').removeClass('active');
+		$(coordinates).addClass('active');
+		$('.contacts_tab').removeClass('active');
+		$(contactsList).addClass('active');
+	});
+
+	$('.coordinates a').on('click',function(){
+		var  contactsList = $(this).data('contactsList'),
+			 listBtn = $(this).data('listBtn');
+
+		$('.coordinates').removeClass('active');
+		$(this).parent().addClass('active');
+		$('.contacts_tab').removeClass('active');
+		$(contactsList).addClass('active');
+		$('.contacts_list li').removeClass('active');
+		$(listBtn).parent().addClass('active');
+	});
 }
 

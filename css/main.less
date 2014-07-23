@@ -1683,14 +1683,14 @@ ul {
     display: none;
     padding: 20px;
     text-align: center;
-}
+}// END .popup_block
 
 #map {
     width: 600px;
     height: 400px;
     padding: 0;
     margin: auto;
-}
+}// END #map 
 
 #bread_crumbs {
     padding: 30px 0 0 0;
@@ -1738,7 +1738,7 @@ ul {
     text-indent: -3px;
     line-height: 1;
     padding-top: 10px;
-}
+}// END .big_title
 
 #catalog_block {
     .sorting {
@@ -1776,38 +1776,55 @@ ul {
         }
     }
 }//END #catalog_block
+
 .alphabet_list {
     padding-top: 12px;
 
-    li {
+    a {
+        font-family: 'weblysleek_uisemibold';
+        color:#000;
+        text-decoration: none;
+        display: block;
+        font-size: 14pt;
+        .transition(0.5s,all);
+
+        &:hover , &.active {
+            color:#539354;
+            border-color:#539354;
+        }
+    }
+
+    & > li {
+        margin: 0 49px 0 55px;
+        float: left;
         display: inline-block;
         vertical-align: top;
-        margin: 0 3px;
         line-height: 1;
-        
-        &:first-child {
-            margin: 0 49px 0 55px;
 
+        div  {
+            display: inline-block;
+            vertical-align: top;
+            float: left;
             a {
                 border-bottom: 1px dashed #000;
+                display: table; 
             }
         }
 
-        a {
-            font-family: 'weblysleek_uisemibold';
-            color:#000;
-            text-decoration: none;
-            display: block;
-            font-size: 14pt;
-            .transition(0.5s,all);
+        ul {
+            width: auto;
+            vertical-align: top;
+            margin: 0 0 0 80px;
 
-            &:hover , &.active {
-                color:#539354;
-                border-color:#539354;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 3px;
+                line-height: 1;
             }
         }
     }
-}
+}// END .alphabet_list
 
 #scroll {
     padding: 50px 0 20px 0;
@@ -1841,7 +1858,6 @@ ul {
         display: inline-block;
         vertical-align: top;
         margin: 0 15px 0 0;
-        height: 300px;
 
         li {
             padding-bottom: 10px;
@@ -1853,12 +1869,324 @@ ul {
                 font-size: 18pt;
                 text-decoration: none;
                 .transition(0.5s,all);
+                border-bottom: 1px solid #fff;
 
                 &:hover {
-                    color:#539354;
+                    color:#bf2e22;
+                    border-color:#bf2e22;
                 }
             }
         }
     }
- 
-}
+}// END .alphabet_scroll
+
+#contacts_block {
+    .f_right {
+
+        .contacts_tab {
+            width: 217px;
+            position: absolute;
+            background: #ebebeb;
+            padding: 17px 13px;
+            .box-sizing(border-box);
+            top:50%;
+            right: 0;
+            margin-bottom:0!important;
+            margin-left:0!important;
+            margin-right:0!important;
+
+            &:after {
+                right: 100%;
+                top: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(235, 235, 235, 0);
+                border-right-color: #ebebeb;
+                border-width: 22px;
+                margin-top: -22px;
+            }
+
+            h2 {
+                font-weight: normal;
+                font-size: 10pt;
+                margin: 0;
+            }
+
+            & > ul {
+                padding-top: 25px;
+
+                & > li {
+                    padding-top: 22px;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    h3 {
+                        margin: 0;
+                        font-family: 'weblysleek_uisemibold';
+                        font-size: 10pt;
+                        line-height: 1;
+                    }
+
+                    ul {
+                        padding-top: 25px;
+
+                        li {
+                            padding-bottom: 5px;
+
+                            span {
+                                font-size: 10pt;
+                                line-height: 1.3;
+                                display: block;
+                                font-family: 'weblysleek_uisemibold';
+                            }
+
+                            p {
+                                margin: 0;
+                                font-size: 10pt;
+                                padding: 7px 0;
+
+                                a {
+                                    display: table;
+                                    line-height: 1;
+                                    color:#000;
+                                    text-decoration: none;
+                                    border-bottom: 1px dashed #000;
+                                    .transition(0.5s,all);
+
+                                    &:hover {
+                                        color: #bf2e22;
+                                        border-color:#bf2e22;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contacts_tab {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    footer {
+        min-height: 120px;
+        width: 100%;
+        
+        .contacts_tab {
+            width: 51.5%;
+            position: relative;
+            background: #ebebeb;
+            .box-sizing(border-box);
+            margin: 21px auto ;
+            font-size: 10pt;
+
+            &:after {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(235, 235, 235, 0);
+                border-bottom-color: #ebebeb;
+                border-width: 22px;
+                margin-left: -22px;
+            }
+
+            h3 {
+                font-weight: normal;
+                font-size: 10pt;
+                margin: 10px 0 0 0;
+                text-align: center;
+                line-height: 43px;
+                line-height: 30px;
+            }
+
+            table {
+                width: 100%;
+
+                tr {
+                    &:nth-child(even) {
+                        td {
+                            background: #d0d0d0;
+                        }
+                    }
+
+                    td {
+                        padding: 0 17px;
+                        color:#000;
+                        line-height: 1;
+                        height: 30px;
+
+                        a {
+                            color:#000;
+                            display: inline-block;
+                            vertical-align: top;
+                            border-bottom: 1px dashed #000;
+                            text-decoration: none;
+                            .transition(0.5s , all);
+
+                            &:hover {
+                                color: #bf2e22;
+                                border-color:#bf2e22;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    article {
+        margin: 32px 295px 0 50px;
+        width: auto;
+        position: relative;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .contacts_list {
+            position: absolute;
+            top: 8px;
+            left: -50px;
+
+            li {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 1;
+                color:#000;
+                font-size: 10pt;
+
+                &:hover ,
+                &.active {
+                    span {
+                        color:#539354;
+                    }
+
+                    a {
+                        color:#539354;
+                        border-color:#539354;
+                    }
+                }
+
+                &.active {
+                    a {
+                        font-style: italic;
+                    }
+                }
+
+                a {
+                    color:#000;
+                    border-bottom:1px dashed #000;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+            }
+        }// END .contacts_list
+
+        .coordinates {
+            width: 64px;
+            position: absolute;
+
+            a {
+                text-decoration: none;
+                color:#646464;
+                .transition(0.5s,all);
+
+                span {
+                    display: block;
+                    height: 57px;
+                    position: relative;
+                }
+
+                i {
+                    .sprite;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    .transition(0.5s,all);
+
+                    &.bottom {
+                        .sprite-28;
+                        z-index: 1;
+                    }
+                    
+                    &.top {
+                        .sprite-29;
+                        z-index: 2;
+                        opacity: 0;
+                        filter:alpha(opacity=0);
+                    }
+                    
+                }
+
+                p {
+                    margin: 0;
+                    text-align: center;
+                    line-height: 1;
+                    font-size: 10pt;
+                    .transition(0.5s,all);
+                }
+            }
+
+
+            &.active , &:hover {
+                a {
+                    color:#539354;
+                
+                    i {
+                        &.top {
+                            opacity: 1;
+                            filter:alpha(opacity=100);
+                        }
+
+                        &.top {
+                            filter:alpha(opacity=0);
+                            opacity: 1;
+                        }
+                    }
+
+                    p {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            &#coordinates_almaty {
+                right: 20.1%;
+                top: 65.7%;
+            }
+
+            &#coordinates_astana {
+                top: 24%;
+                right: 39.7%;
+            }
+
+            &#coordinates_caraganda {
+                top: 44%;
+                right: 32.7%;
+            }
+
+            &#coordinates_semey {
+                top: 26%;
+                right: 22%;
+            }
+        }// END .coordinates
+    }
+}// END #contacts_block
