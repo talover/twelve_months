@@ -2238,27 +2238,54 @@ ul {
         & > ul {
             display: inline-block;
             vertical-align: top;
+            margin: 0 0 0 16px;
 
             li {
+                display: inline-block;
+                vertical-align: top;
+
                 .jq-selectbox {
                     .jq-selectbox__select {
                         border: 0;
                         background: none;
                         box-shadow: none;
+                        padding: 0 21px 0 0;
 
                         .jq-selectbox__select-text {
                             font-family: 'Open Sans', sans-serif;
                             font-weight: bold;
                             color:#fff;
                             text-shadow:none;
+                            font-size: 10pt;
+                            border-bottom: 1px dashed #fff;
+                            line-height: 1;
+                            padding: 8px 0 0 0;
                         }
 
                         .jq-selectbox__trigger {
+                            border:0;
+
                             .jq-selectbox__trigger-arrow {
                                 opacity: 1;
                                 filter:alpha(opacity=100);
+                                border:0;
+                                .sprite;
+                                .sprite-51;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom:0;
+                                margin: auto;
                             }
                         }
+                    }
+                }
+
+                #goTop {
+                    i {
+                        .sprite;
+                        .sprite-50;
                     }
                 }
             }
