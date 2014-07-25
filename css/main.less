@@ -126,6 +126,9 @@ ul {
     }
 }
 
+a {
+    outline: 0;
+}
 
 /* ==========================================================================
    Helper classes
@@ -2350,8 +2353,175 @@ ul {
             }
         }
     }
+
+    .f_right {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        color:#fff;
+        font-size: 10pt;
+        line-height: 50px;
+
+        p {
+            margin:0;
+        }
+
+        ul {
+            li {
+                display: inline-block;
+                vertical-align: top;
+
+                &.busket {
+                    margin: 0 17px 0;
+                    i {
+                        .sprite;
+                        .sprite-52;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 0 5px 0 0;
+                    }
+                }
+
+                &.selected {
+                    margin: 0 36px 0 0;
+
+                    i {
+                        .sprite;
+                        .sprite-48;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 0 5px 0 0;
+                    }
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }// END #header_products 
 
 #products_block {
     padding-top: 50px;
+
+    .big_title {
+        padding-left: 20px;
+    }
 }// END #products_block
+
+#filters_block {
+    padding-top: 12px;
+
+    .category {
+        height: 50px;
+        background: #f6f6f6;
+        padding:0 12px;
+        .box-sizing(border-box);
+        margin-left: 5px;
+
+        a {
+            height: 23px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            width: 117px;
+            color:#fff;
+            background: #fab705;
+            border:1px solid #d6ceb6;
+            margin: 12px 0 0 0;
+            text-decoration: none;
+            line-height: 23px;
+            outline: 0;
+            .transition(0.5s,all);
+
+            &:hover {
+                background: #0080bf;
+            }
+        }
+    }
+
+    .filters {
+        height: 50px;
+        background: #f6f6f6;
+        padding: 0 17px;
+        margin: 0 0 0 178px;
+        width: auto;
+
+        p {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 50px;
+            margin: 0;
+        }
+
+        & > ul {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 4px;
+
+            li {
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 7px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                a {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 12px 0 0 0;
+                    height: 23px;
+                    line-height: 23px;
+                    border:1px solid #d7d7d7;
+                    background: #fff;
+                    color:#000;
+                    text-decoration: none;
+                    padding: 0 8px;
+                    font-size: 10pt;
+                    .transition(0.5s,all);
+
+                    &:hover, &.active {
+                        color:#fff;
+                        background: #0080bf;
+                    }
+                }
+            }
+        }
+
+        .tabs_list {
+            display: inline-block;
+            vertical-align: top;
+
+            li {
+                display: inline-block;
+                vertical-align: top;
+
+                a {
+                    .sprite;
+
+                    &.line {
+                        .sprite-36;
+
+                        &:hover , &.active {
+                            .sprite-37;
+                        }
+                    }
+
+                    &.both {
+                        .sprite-39;
+
+                        &:hover , &.active {
+                            .sprite-38;
+                        }
+                    }
+
+                    &.block {
+                        
+                    }
+                }
+            }
+        }
+    }
+}
