@@ -10,10 +10,89 @@ $(document).ready(function() {
 		Popup();
 		FormStyler();
 		sorting_tab();
-		scroll();  
 		contacts_tab_height();
 		contacts_tab();
+		thumbnailSlider();
+		zoomImage();
+		scrollLetter();  
+		
 });
+
+function thumbnailSlider() {
+	// Thumbnail owl carousel		 
+		var sync1 = $("#big_slide");
+		var sync2 = $("#thumb_slide");
+		 
+		sync1.owlCarousel({
+			singleItem : true,
+			navigation: true,
+			pagination:false,
+			transitionStyle : "fade",
+			afterAction : syncPosition,
+			responsiveRefreshRate : 200
+		});
+		 
+		sync2.owlCarousel({
+			items : 15,
+			itemsDesktop : [1199,10],
+			itemsDesktopSmall : [979,10],
+			itemsTablet : [768,8],
+			itemsMobile : [479,4],
+			pagination:false,
+			responsiveRefreshRate : 100,
+			afterInit : function(el){
+				el.find(".owl-item").eq(0).addClass("synced");
+			}
+		});
+		 
+		function syncPosition(el){
+			var current = this.currentItem;
+			$("#thumb_slide")
+			.find(".owl-item")
+			.removeClass("synced")
+			.eq(current)
+			.addClass("synced")
+			if($("#thumb_slide").data("owlCarousel") !== undefined){
+				center(current)
+			}
+		}
+		 
+		$("#thumb_slide").on("click", ".owl-item", function(e){
+			e.preventDefault();
+			var number = $(this).data("owlItem");
+			sync1.trigger("owl.goTo",number);
+		});
+		 
+		function center(number){
+			var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
+			var num = number;
+			var found = false;
+			for(var i in sync2visible){
+				if(num === sync2visible[i]){
+					var found = true;
+				}
+			}
+		 
+			if(found===false){
+				if(num>sync2visible[sync2visible.length-1]){
+					sync2.trigger("owl.goTo", num - sync2visible.length+2)
+				}else{
+					if(num - 1 === -1){
+						num = 0;
+					}
+					sync2.trigger("owl.goTo", num);
+				}
+			} else if(num === sync2visible[sync2visible.length-1]){
+				sync2.trigger("owl.goTo", sync2visible[1])
+			} else if(num === sync2visible[0]){
+				sync2.trigger("owl.goTo", num-1)
+			}
+		}
+}
+
+function zoomImage() {
+	$(".zoom").elevateZoom();
+}
 
 function slider() {
 	$("#baner_block").owlCarousel({
@@ -156,22 +235,22 @@ function sorting_tab() {
 	});
 }
 
-function scroll() {                          
-    $("#scroll").mCustomScrollbar({
-        axis:"x",
-        theme:"inset-dark",
-        advanced:{autoExpandHorizontalScroll:true}
-    });
+function scrollLetter() {                          
+	$("#scroll").mCustomScrollbar({
+		axis:"x",
+		theme:"inset-dark",
+		advanced:{autoExpandHorizontalScroll:true}
+	});
 
-    $('.alphabet_list a').on('click', function(){
-    	var alphabet = $(this).data('alphabet');
+	$('.alphabet_list a').on('click', function(){
+		var alphabet = $(this).data('alphabet');
 
-    	$("#scroll").mCustomScrollbar("scrollTo",alphabet);
-    	$('.letter_block').removeClass('active');
-    	$(alphabet).find('.letter_block').addClass('active');
-    	$('.alphabet_list a').removeClass('active');
-    	$(this).addClass('active');
-    });
+		$("#scroll").mCustomScrollbar("scrollTo",alphabet);
+		$('.letter_block').removeClass('active');
+		$(alphabet).find('.letter_block').addClass('active');
+		$('.alphabet_list a').removeClass('active');
+		$(this).addClass('active');
+	});
 }
 
 function contacts_tab_height() {
