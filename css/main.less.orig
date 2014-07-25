@@ -2354,7 +2354,7 @@ a {
         }
     }
 
-	.f_right {
+    .f_right {
         font-family: 'Open Sans', sans-serif;
         font-weight: bold;
         color:#fff;
@@ -2403,17 +2403,13 @@ a {
 
 #products_block {
     padding-top: 50px;
+<<<<<<< HEAD
 
     .big_title {
         padding-left: 20px;
     }
 }// END #products_block
 
-.zoomLens {
-    border: none !important;
-    background-color: #bf2e22 !important;
-    opacity: .27 !important; 
-}
 #filters_block {
     padding-top: 12px;
 
@@ -2529,4 +2525,12 @@ a {
             }
         }
     }
+=======
+}// END #products_block
+
+.zoomLens {
+    border: none !important;
+    background-color: #bf2e22 !important;
+    opacity: .27 !important; 
+>>>>>>> nadin
 }
