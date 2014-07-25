@@ -2498,10 +2498,12 @@ a {
         .tabs_list {
             display: inline-block;
             vertical-align: top;
+            margin: 19px 8px 0 0;
 
             li {
                 display: inline-block;
                 vertical-align: top;
+                margin-left: 6px;
 
                 a {
                     .sprite;
@@ -2523,9 +2525,30 @@ a {
                     }
 
                     &.block {
-                        
+                        .sprite-34;
+
+                        &:hover , &.active {
+                            .sprite-35;
+                        }
                     }
                 }
+            }
+        }
+
+        .more {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 1;
+            color:#fab705;
+            border-bottom: 1px dashed #fab705;
+            text-decoration: none;
+            .transition(0.5s,all);
+            margin: 19px 29px 0 0;
+            font-size: 10pt;
+            
+            &:hover {
+                color: #bf2e22;
+                border-color:#bf2e22;
             }
         }
     }
