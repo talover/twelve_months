@@ -4962,6 +4962,25 @@
         <script src="js/vendor/jquery.formstyler.min.js"></script>
         <script src="js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){                     
+                $("#scroll").mCustomScrollbar({
+                    axis:"x",
+                    theme:"inset-dark",
+                    advanced:{autoExpandHorizontalScroll:true}
+                });
+
+                $('.alphabet_list a').on('click', function(){
+                    var alphabet = $(this).data('alphabet');
+
+                    $("#scroll").mCustomScrollbar("scrollTo",alphabet);
+                    $('.letter_block').removeClass('active');
+                    $(alphabet).find('.letter_block').addClass('active');
+                    $('.alphabet_list a').removeClass('active');
+                    $(this).addClass('active');
+                });
+            });
+        </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
