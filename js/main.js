@@ -13,6 +13,7 @@ $(document).ready(function() {
 		contacts_tab_height();
 		contacts_tab();
 		productsTabs();
+		DropDownTabs();
 
 		$("a.anchorLink").anchorAnimate();
 
@@ -31,6 +32,26 @@ $(document).ready(function() {
 		$('.flag').on('click',function(){
 			$(this).toggleClass('active');
 		});
+
+		// $('.click-nav > li').toggleClass('no-js js');
+		// $('.click-nav .js .drop_down').hide();
+		// $('.clicker').click(function(e) {
+		// 	$(this).parent().siblings().find('.clicker i').removeClass('active');
+		// 	$(this).find('i').toggleClass('active');
+		// 	$(this).parent().siblings().find('.drop_down').hide();
+		// 	$(this).parent().find('.drop_down').show();
+		// 	$(this).toggleClass('active');
+		// 	e.stopPropagation();
+		// });
+
+		// $(document).click(function() {
+		// 	if ($('.click-nav .js .drop_down').is(':visible')) {
+		// 		$('.click-nav .js .drop_down', this).slideUp();
+		// 		$('.clicker').removeClass('active');
+		// 		$('.clicker i').removeClass('active');
+		// 	}
+		// });
+
 });
 
 
@@ -245,4 +266,12 @@ jQuery.fn.anchorAnimate = function(settings) {
 		  	return false;
 		})
 	})
+}
+
+function DropDownTabs() {
+	$('.drop_down_tabs a').on('click',function(){
+		var DropDownTab = $(this).data('dropDownTabs');
+		$(this).parents('.drop_down').find('.drop_down_tab').removeClass('active');
+		$(DropDownTab).addClass('active');
+	});
 }
