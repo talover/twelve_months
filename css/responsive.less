@@ -86,6 +86,33 @@
 	    	width:55%;
 	    }
 	}// END #last_viewed
+
+	#item_block {
+	    .item_viewer {
+	        .f_left {
+	            width: 450px;
+	            height: 450px;
+	        }
+
+	        article {
+	            margin: 0 0 0 470px;
+
+	            .buy {
+	            	font-size: 30pt;
+	            }
+	        }
+	    }// END .item_viewer
+	}// #item_block
+
+	.desktop {
+		display: none;
+	}
+
+	.medium {
+		display: block;
+	}
+
+	#header_fixed {display: none!important;}
 }
 @media (max-width:1024px) {
 	#header {
@@ -218,8 +245,62 @@
 	    	width:50%;
 	    }
 	}// END #last_viewed
-}
 
+	#item_block {
+	    .item_viewer {
+	        .f_left {
+	        	float: none;
+	        	width: 100%;
+	        	height: auto;
+
+	        	.zoomPup ,.zoomWindow {display: none!important;}
+
+	        	.jqzoom {
+	        		margin-bottom: 25px;
+	        		overflow: hidden;
+
+	        		img {
+	        			display: block;
+	        			max-width: 100%;
+	        			margin:auto;
+	        		}
+	        	}
+	        }
+
+	        article {
+	            width: auto;
+	            position: relative;
+	            margin: 0;
+	            clear: both;
+	        }
+	    }// END .item_viewer
+	}// #item_block
+
+	.medium {
+		display: none;
+	}
+
+	.item_viewer .medium {display: block;}
+
+	.mob {
+		display: block;
+	}
+}
+@media (max-width:980px) {
+
+	#item_block {
+	    .item_info {
+	        .f_left , .f_right {
+	        	width: 100%;
+	        	padding: 0;
+	        }
+
+	        .f_left {
+	        	margin-bottom: 25px;
+	        }
+	    }// END .item_info
+	}// #item_block
+}
 @media (max-width:900px) {
 
 	#nav {

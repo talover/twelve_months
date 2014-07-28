@@ -27,6 +27,10 @@ $(document).ready(function() {
 				$('.top_block').removeClass('active');
 			}
 		});
+
+		$('.flag').on('click',function(){
+			$(this).toggleClass('active');
+		});
 });
 
 

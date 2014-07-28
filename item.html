@@ -3,46 +3,83 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>test</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-		<link rel="stylesheet" href="css/normalize.min.css">
-<!--         <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/responsive.css">
- -->
-		<link rel="stylesheet/less" type="text/css" href="css/main.less">
-		<link rel="stylesheet/less" type="text/css" href="css/responsive.less">
-		<script src="js/vendor/less.js" type="text/javascript"></script>
-		
-		<!--[if lt IE 9]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <link rel="stylesheet" href="css/normalize.min.css">
+<!--         <link rel="stylesheet" href="css/main.css"> -->
 
-			<style type="text/css">
-				body {
-					min-widht:1200px;
-				}
-			</style>
-		<![endif]-->
-	</head>
-	<body>
-		<!--[if lt IE 8]>
-			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <link rel="stylesheet/less" type="text/css" href="css/main.less">
+        <link rel="stylesheet/less" type="text/css" href="css/responsive.less">
+        <script src="js/vendor/less.js" type="text/javascript"></script>
 
-			<style type="text/css">
-				#main , #footer {
-					display:none;
-				}
-			</style>
-		<![endif]-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
-		<section id="main">
+        <script src="js/vendor/owl.carousel.js"></script>
+        <script src="js/vendor/jquery.fancybox.js"></script>
+        <script src="js/vendor/jquery.formstyler.min.js"></script>
+        <script src="js/vendor/jquery.jqzoom-core.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
 
+        <script type="text/javascript">
+
+        $(document).ready(function() {
+            zoom();
+        });
+
+        function zoom() {
+
+            if($(window).width() > 1200){
+                var w = $('#item_block').width() - 606,
+                h = $('.item_viewer .f_left').height();
+            }else {
+                var w = $('#item_block').width() - 506,
+                h = $('.item_viewer .f_left').height();
+            }
+
+            $('.jqzoom').jqzoom({
+                    zoomType: 'standard',
+                    lens:true,
+                    preloadImages: false,
+                    alwaysOn:false,
+                    zoomWidth: w,  
+                    zoomHeight:h, 
+                    xOffset: 5,  
+                    yOffset:0, 
+            });
+        }
+
+        </script>
+        
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+
+            <style type="text/css">
+                body {
+                    min-widht:1200px;
+                }
+            </style>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+
+            <style type="text/css">
+                #main , #footer {
+                    display:none;
+                }
+            </style>
+        <![endif]-->
+
+        <section id="main">
             <header id="header">
                 <header>
                     <div class="main_container">
@@ -3593,7 +3630,7 @@
                     </div>
                 </nav>
             </section><!--#nav_mob-->
-            
+
             <header id="header_fixed">
                 <div class="main_container clearfix">
                     <div class="f_left">
@@ -3608,7 +3645,7 @@
                                 </select>
                             </li>
                             <li>
-                                <a id="goTop" href="#main"><i></i><span>Вверх</span></a>
+                                <a id="goTop" class="anchorLink" href="#main"><i></i><span>Вверх</span></a>
                             </li>
                             <li>
                                 <a class="back" href="#"><i></i><span>К предыдущей страниц</span>е</a>
@@ -3635,262 +3672,500 @@
                 </div>
             </header><!--END #header_fixed-->
 
-			<section id="bread_crumbs" class="main_container">
-				<ul>
-					<li><a class="home" href="index.html"><i></i>Главная страница</a></li>
-					<li>></li>
-					<li><a href="#">Информация</a></li>
-					<li>/</li>
-					<li><span>Контактные данные</span></li>
-				</ul>
-			</section><!--END #bread_crumbs-->
+            <section id="bread_crumbs" class="main_container">
+                <ul>
+                    <li><a class="home" href="index.html"><i></i>Главная страница</a></li>
+                    <li>></li>
+                    <li><a href="#">Отделочные материалы</a></li>
+                    <li>></li>
+                    <li><a href="#">Обои и обойная продукция</a></li>
+                    <li>></li>
+                    <li><span>Обои бумажные</span></li>
+                </ul>
+            </section><!--END #bread_crumbs-->
 
-            
+            <section id="item_block" class="main_container">
+                <h1 class="big_title">Erismann True Color 5432-08</h1>
 
-			<section id="item_block" class="main_container clearfix">
-                <h3 class="big_title">Erismann True Color 5432-08</h3>
+                <div class="item_viewer clearfix">
+                    <div class="f_left">
+
+                        <div class="clearfix desktop">
+                            <a href="img/zoom/zoom_big/zoom_big_1.png" class="jqzoom" rel='gal1'  title="triumph" >
+                                <img src="img/zoom/zoom_1.png"  title="triumph" >
+                            </a>
+                        </div>
+                  
+                        <div class="clearfix medium">
+                            <a href="img/zoom/zoom_big/zoom_big_1.png" class="jqzoom" rel='gal2'  title="triumph" >
+                                <img src="img/zoom/zoom_second_1.png"  title="triumph" >
+                            </a>
+                        </div>
+
+
+                        <ul  class="clearfix thumblist mob" >
+
+                            <li>
+                                <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_1.png',largeimage: 'img/zoom/zoom_big/zoom_big_1.png'}">
+                                    <img src='img/pic_11.png'>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_2.png',largeimage: 'img/zoom/zoom_big/zoom_big_2.png'}">
+                                    <img src='img/pic_12.png'>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_3.png',largeimage: 'img/zoom/zoom_big/zoom_big_3.png'}">
+                                    <img src='img/pic_13.png'>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_4.png',largeimage: 'img/zoom/zoom_big/zoom_big_4.png'}">
+                                    <img src='img/pic_14.png'>
+                                </a>
+                            </li>
+                        </ul>  
+                    </div>
+
+                    <article>
+                        <header>
+                            <h3>Erismann True Color 5432-08</h3>
+                            <p>Обои вспененный винил на бумажной основе.</p>
+                            <a class="flag big" href="javascript:void(0)"></a>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        
+                                        <span>Рейтинг товара:</span>
+
+                                        <ul class="rating">
+                                            <li><a href="#"><i></i></a></li>
+                                            <li><a href="#"><i></i></a></li>
+                                            <li><a href="#"><i></i></a></li>
+                                            <li><a href="#"><i></i></a></li>
+                                            <li><a href="#"><i></i></a></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <span>Статус товара:</span>
+                                        <p class="green">ЕСТЬ В НАЛИЧИИ</p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span>Количество:</span>
+                                        <input class="number" type="text" value="1" />
+                                    </td>
+                                    <td>
+                                        <p class="sum">
+                                            <i></i>
+                                            <span>3999</span>
+                                            <select>
+                                                <option>тенге</option>
+                                                <option>долар</option>
+                                                <option>рубль</option>
+                                                <option>евро</option>
+                                            </select>
+                                        </p>
+
+                                        <span>Сума  на 2 товара <b>7500</b></span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <a class="calculate" href="#">Рассчитать необходимое вам количество?</a>
+                        </header>
+
+                        <a class="buy" href="#">Приобрести</a>
+
+                        <ul class="awards">
+                            <li>
+                                <a href="#"><i class="new"></i></a>
+                                <span>Новинка</span>
+                            </li>
+                            <li>
+                                <a href="#"><i class="star"></i></a>
+                                <span>Выбор покупателей</span>
+                            </li>
+                        </ul>
+
+                        <div class="adress">
+                            <p>
+                                Данный товар, также, в наличии в гиппермаркете 
+                            </p>    
+
+                            <p>
+                                на ул. Ташкенская, 516, 
+                                <a href="#">показать схему проезда.</a>
+                            </p> 
+                        </div>
+
+                        <p class="info_price">Цены указаны с учетом НДС.</p>
+                    </article>
+                </div><!--END .item_viewer-->
+
+                <ul  class="clearfix thumblist desktop" >
+
+                    <li>
+                        <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/zoom/zoom_1.png',largeimage: 'img/zoom/zoom_big/zoom_big_1.png'}">
+                            <img src='img/pic_11.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/zoom/zoom_2.png',largeimage: 'img/zoom/zoom_big/zoom_big_2.png'}">
+                            <img src='img/pic_12.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/zoom/zoom_3.png',largeimage: 'img/zoom/zoom_big/zoom_big_3.png'}">
+                            <img src='img/pic_13.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/zoom/zoom_4.png',largeimage: 'img/zoom/zoom_big/zoom_big_4.png'}">
+                            <img src='img/pic_14.png'>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul  class="clearfix thumblist medium" >
+
+                    <li>
+                        <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_1.png',largeimage: 'img/zoom/zoom_big/zoom_big_1.png'}">
+                            <img src='img/pic_11.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_2.png',largeimage: 'img/zoom/zoom_big/zoom_big_2.png'}">
+                            <img src='img/pic_12.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_3.png',largeimage: 'img/zoom/zoom_big/zoom_big_3.png'}">
+                            <img src='img/pic_13.png'>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='javascript:void(0);' rel="{gallery: 'gal2', smallimage: 'img/zoom/zoom_second_4.png',largeimage: 'img/zoom/zoom_big/zoom_big_4.png'}">
+                            <img src='img/pic_14.png'>
+                        </a>
+                    </li>
+                </ul>
+
+                <h3 class="second_title">Техническая информация:</h3>
 
                 <div class="item_info clearfix">
-                    <div class="f_left">  
+                    <div class="f_left">
+                        <div>
+                            <h3 class="second_title">Erismann True Color 5432-08</h3>
 
-                        <div class="item_tabs active">
-                            <img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt="">
-                        </div>
-
-                        <div class="item_tabs">
-                            <img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt="">
-                        </div>
-
-                        <div class="item_tabs">
-                            <img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt="">
-                        </div>
-
-                        <div class="item_tabs">
-                            <img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt="">
-                        </div>
-
-                        <div class="item_tabs">
-                            <img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt="">
+                            <ul>
+                                <li>Обои вспененный винил на бумажной основе. </li>
+                                <li>Рекомендованные помещения: детская, спальня, холл, гостиная. </li>
+                                <li>Стиль: модерн. </li>
+                                <li>Дизайн: узоры. </li>
+                                <li>Цвет: бежевый. </li>
+                                <li>Размер: 1.06 х 10 м</li>
+                                <li>Вес: 1100,0 кг</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="f_right">
-                        <h3>Erismann True Color 5432-08</h3>
-                        <p>Обои вспененный винил на бумажной основе. </p>
-                        <a class="flag" href="#"></a>
+                        <div>
+                            <h3 class="second_title">С этим товаром, также, покупают:</h3>
 
-                        <ul class="clearfix">
-                            <li class="f_left">
-                                <p>
-                                    Рейтинг товара:
-                                </p>
-                                <ul class="rating">
-                                    <li><a class="active" href="#"></a></li>
-                                    <li><a class="active" href="#"></a></li>
-                                    <li><a class="active" href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                    <li><a href="#"></a></li>
-                                </ul>
-                            </li>
-                            <li class="f_right">
-                                <p class="commodity_status">
-                                    Статус товара:
-                                    <span>ЕСТЬ В НАЛИЧИИ</span>
-                                </p>
-                            </li>
-                        </ul>
+                            <div class="slider_cont">
+                                <div id="viewed_slider" class="owl-carousel">
 
-                        <ul class="clearfix">                           
-                            <li class="f_left">
-                                <p class="number">
-                                    <span>Количество:</span>
-                                    <input type="text" value="1" />
-                                </p>
-                            </li>
-                            <li class="f_right">
-                                <p class="price">
-                                    <i></i>
-                                    <span>3999</span>
-                                    <select>
-                                        <option>Тенге</option>
-                                        <option>Долар</option>
-                                        <option>Рубль</option>
-                                        <option>Евро</option>
-                                    </select>
-                                </p>
-                            </li>
-                        </ul>
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_4.png" alt="">
+                                            </span>
 
-                        <a class="calculate" href="#">Рассчитать необходимое вам количество?</a>
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_5.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_6.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_7.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_8.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_4.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_4.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+
+                                    <div class="item">
+                                        <a href="#">
+                                            <span class="img_block">
+                                                <img src="img/pic_4.png" alt="">
+                                            </span>
+
+                                            <ul>
+                                                <li>Смеситель</li>
+                                                <li>Радуга</li>
+                                                <li>00001</li>
+                                            </ul>
+                                        </a>
+                                    </div>
+                                </div><!--END #viewed_slider-->
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <section id="mostly_popular">
+                    <h3>Товары, которые вы недавно просматривали</h3>
+                    <div class="slider_cont">
+                        <div id="popular_slider" class="owl-carousel">
 
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
 
-                <div class="f_left">
-<!--                     
-                    <div class="item_big">
-                        <div id="big_slide" class="owl-carousel">
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                            <div class="item"><img class="zoom" src="img/small/image1.jpg" data-zoom-image="img/large/image1.jpg" alt=""></div>
-                        </div>
-                        <div id="thumb_slide" class="owl-carousel">
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                            <div class="item"><img src="img/small/img1.jpg" alt=""></div>
-                        </div>
-                    </div> -->
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_5.png" alt="">
+                                    </span>
 
-                </div>
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-			</section><!--END #item_block-->
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_6.png" alt="">
+                                    </span>
 
-			
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		</section><!--END #main-->
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_7.png" alt="">
+                                    </span>
 
-		<footer id="footer">
-			<div class="main_container">
-				<ul class="clearfix">
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Правовая информция</a></li>
-					<li><a href="#">Вакансии</a></li>
-					<li><a href="#">Информация для дилеров</a></li>
-					<li><a href="#">Доставка</a></li>
-				</ul>
-			</div>
-		</footer><!--END #footer-->
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		<section id="order_call" class="popup_block">
-			Тут  будет попап обратного звонка,  дизайна нет покачто ,  как будет  заверстаю
-		</section><!--END #order_call-->
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_8.png" alt="">
+                                    </span>
 
-		<section id="map_block" class="popup_block">
-			<div id="map">
-			</div>
-		</section>
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		<section id="delivery_block" class="popup_block"> 
-			Тут  будет информация о доставке
-		</section>
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
 
-		<section id="advice_block" class="popup_block"> 
-			<ul>
-				<li>Молоток держите крепче.</li>
-				<li>Пилу держите крепче.</li>
-				<li>Кусачки держите крепче.</li>
-				<li>Ведро держите крепче.</li>
-			</ul>
-		</section>
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
 
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-        <script type="text/javascript">
-            // $(document).ready(function(){
-            //     // $(".zoom").elevateZoom();
-            // });
-            $(document).ready(function() {
-            $(".zoom").elevateZoom();
-              var sync1 = $("#sync1");
-              var sync2 = $("#sync2");
-             
-              sync1.owlCarousel({
-                singleItem : true,
-                slideSpeed : 1000,
-                navigation: true,
-                pagination:false,
-                afterAction : syncPosition,
-                responsiveRefreshRate : 200,
-              });
-             
-              sync2.owlCarousel({
-                items : 15,
-                itemsDesktop      : [1199,10],
-                itemsDesktopSmall     : [979,10],
-                itemsTablet       : [768,8],
-                itemsMobile       : [479,4],
-                pagination:false,
-                responsiveRefreshRate : 100,
-                afterInit : function(el){
-                  el.find(".owl-item").eq(0).addClass("synced");
-                }
-              });
-             
-              function syncPosition(el){
-                var current = this.currentItem;
-                $("#sync2")
-                  .find(".owl-item")
-                  .removeClass("synced")
-                  .eq(current)
-                  .addClass("synced")
-                if($("#sync2").data("owlCarousel") !== undefined){
-                  center(current)
-                }
-              }
-             
-              $("#sync2").on("click", ".owl-item", function(e){
-                e.preventDefault();
-                var number = $(this).data("owlItem");
-                sync1.trigger("owl.goTo",number);
-              });
-             
-              function center(number){
-                var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
-                var num = number;
-                var found = false;
-                for(var i in sync2visible){
-                  if(num === sync2visible[i]){
-                    var found = true;
-                  }
-                }
-             
-                if(found===false){
-                  if(num>sync2visible[sync2visible.length-1]){
-                    sync2.trigger("owl.goTo", num - sync2visible.length+2)
-                  }else{
-                    if(num - 1 === -1){
-                      num = 0;
-                    }
-                    sync2.trigger("owl.goTo", num);
-                  }
-                } else if(num === sync2visible[sync2visible.length-1]){
-                  sync2.trigger("owl.goTo", sync2visible[1])
-                } else if(num === sync2visible[0]){
-                  sync2.trigger("owl.goTo", num-1)
-                }
-                
-              }
-             
-            });
-        </script>
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
 
-		<script src="js/vendor/owl.carousel.js"></script>
-		<script src="js/vendor/jquery.fancybox.js"></script>
-		<script src="js/vendor/jquery.formstyler.min.js"></script>
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		<script src="js/vendor/jquery.elevateZoom-3.0.8.min.js" type="text/javascript"></script>
-		<script src="js/main.js"></script>
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
 
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
 
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-	</body>
+                            <div class="item">
+                                <a href="#">
+                                    <span class="img_block">
+                                        <img src="img/pic_4.png" alt="">
+                                    </span>
+
+                                    <ul>
+                                        <li>Смеситель</li>
+                                        <li>Радуга</li>
+                                        <li>00001</li>
+                                    </ul>
+                                </a>
+                            </div>
+                        </div><!--END #popular_slider"-->
+                    </div>
+                </section><!--END #mostly_popular-->
+            </section><!--END #item_block-->
+        </section><!--END #main-->
+
+        <footer id="footer">
+            <div class="main_container">
+                <ul class="clearfix">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Правовая информция</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Информация для дилеров</a></li>
+                    <li><a href="#">Доставка</a></li>
+                </ul>
+            </div>
+        </footer><!--END #footer-->
+    </body>
 </html>
