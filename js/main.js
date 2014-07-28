@@ -14,6 +14,7 @@ $(document).ready(function() {
 		contacts_tab();
 		productsTabs();
 		DropDownTabs();
+		filtresDropDown();
 
 		$("a.anchorLink").anchorAnimate();
 
@@ -33,25 +34,19 @@ $(document).ready(function() {
 			$(this).toggleClass('active');
 		});
 
-		// $('.click-nav > li').toggleClass('no-js js');
-		// $('.click-nav .js .drop_down').hide();
-		// $('.clicker').click(function(e) {
-		// 	$(this).parent().siblings().find('.clicker i').removeClass('active');
-		// 	$(this).find('i').toggleClass('active');
-		// 	$(this).parent().siblings().find('.drop_down').hide();
-		// 	$(this).parent().find('.drop_down').show();
-		// 	$(this).toggleClass('active');
-		// 	e.stopPropagation();
-		// });
+		$('.add_color_btn').on('click',function(){
+			$("<li><a  class='color-box' href='javascript:void(0)'></a></li>").insertBefore($(this).parent());
+		});
 
-		// $(document).click(function() {
-		// 	if ($('.click-nav .js .drop_down').is(':visible')) {
-		// 		$('.click-nav .js .drop_down', this).slideUp();
-		// 		$('.clicker').removeClass('active');
-		// 		$('.clicker i').removeClass('active');
-		// 	}
-		// });
+		$('#type input[type="radio"]').change(function(){
+			var text = $(this).data('text');
+			
+			$('#type a').addClass('active').find('span').text(text);
+		});
 
+		$('#type a').on('click','i',function(){
+			$(this).parents('a').removeClass('active').find('span').text('');
+		});
 });
 
 
@@ -196,7 +191,6 @@ function sorting_tab() {
 	});
 }
 
-
 function contacts_tab_height() {
 	$('.f_right .contacts_tab').each(function(){
 		var w = $(this).height() + 30 ,
@@ -273,5 +267,12 @@ function DropDownTabs() {
 		var DropDownTab = $(this).data('dropDownTabs');
 		$(this).parents('.drop_down').find('.drop_down_tab').removeClass('active');
 		$(DropDownTab).addClass('active');
+	});
+}
+
+function filtresDropDown() {
+	$('.filters > ul > li > a ').on('click',function(){
+		$(this).parent().siblings().find('.drop_down').slideUp();
+		$(this).parent().find('.drop_down').slideToggle();
 	});
 }
