@@ -103,10 +103,14 @@ $(document).ready(function() {
 				$("<li class='color_block'><a  class='color-box' href='javascript:void(0)'></a></li>").insertBefore($(this).parent());
 				$(this).parents('.color_cont').addClass('active').find('.num span').text(num_color + 1);
 			}
+			if(5 == num_color){
+				$(this).addClass('hidden');
+			}
 		});
 
 		$('.color_cont').on('click','i.close',function(){
 			$('.add_color .color_block').remove();
+			$(this).parents('.color_cont').find('.add_color_btn').removeClass('hidden');
 		});
 
 		/*

@@ -2885,8 +2885,8 @@ a {
                                         margin-left: 0;
 
                                         a , .add_color_btn {
-                                            width: 32px;
-                                            height: 32px;
+                                            width: 30px;
+                                            height: 30px;
                                             .border-radius(100%);
                                             border:1px solid #ccc;
                                             background: #fff;
@@ -3172,9 +3172,9 @@ a {
             }
         }
 
-        .flag {
-            .sprite;
-            .sprite-43;
+        a {
+            color: #000;
+            text-decoration: none;
         }
 
         .price {
@@ -3212,12 +3212,43 @@ a {
 
         td {
             padding:10px;
+
+            table {
+                width: 100%;
+
+                td {
+                    padding: 0;
+                }
+            }
         }
 
-        tr {
+
+        & > tbody  > tr {
+
+            & > td {
+                background: #f6f6f6;
+                .transition(0.5s,all);
+            }
+
             &:nth-child(odd) {
-                td {
+                & > td {
                     background: #f1f1f1;
+                }
+            }
+
+            &:hover {
+                & > td {
+                    background: #ddd;
+
+                    // color:#fff;
+
+                    // .jq-selectbox__select-text {
+                    //     color: #fff!important;
+                    // }
+
+                    .info {
+                        color:#fff;
+                    }
                 }
             }
         }
@@ -3233,6 +3264,12 @@ a {
         }
 
         & > tbody  > tr {
+
+            & > td {
+                background: #f6f6f6;
+                .transition(0.5s,all);
+            }
+
             &:nth-child(odd) {
                 & > td {
                     background: #f1f1f1;
@@ -3243,7 +3280,7 @@ a {
                 & > td {
                     background: #ddd;
 
-                    color:#fff;
+                    // color:#fff;
 
                     .info {
                         color:#fff;
