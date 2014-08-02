@@ -15,6 +15,7 @@ $(document).ready(function() {
 		productsTabs();
 		DropDownTabs();
 		filtresDropDown();
+		DropDownBlockTab();
 
 		$("a.anchorLink").anchorAnimate();
 
@@ -28,14 +29,16 @@ $(document).ready(function() {
 				$('#header_fixed').slideUp();
 				$('.top_block').removeClass('active');
 			}
+
+			if(scroll > 310) {
+				$('#filters_block').addClass('active');
+			}else {
+				$('#filters_block').removeClass('active');
+			}
 		});
 
 		$('.flag').on('click',function(){
 			$(this).toggleClass('active');
-		});
-
-		$('.add_color_btn').on('click',function(){
-			$("<li><a  class='color-box' href='javascript:void(0)'></a></li>").insertBefore($(this).parent());
 		});
 
 		$('#type input[type="radio"]').change(function(){
@@ -46,6 +49,78 @@ $(document).ready(function() {
 
 		$('#type a').on('click','i',function(){
 			$(this).parents('a').removeClass('active').find('span').text('');
+		});
+
+		$('.category a').on('click',function(){
+			$(this).parent().find('.drop_down').slideToggle();
+		});
+
+		$('.checklist input[type="checkbox"]').on('change',function(){
+			var n = $(this).parents('.checklist').find('input[type="checkbox"]:checked').length;
+			
+			if(0 < n) {
+				$(this).parents('.drop_cont').addClass('active').find('.num span').text(n);
+			}else {
+				$(this).parents('.drop_cont').removeClass('active').find('.num span').text('');
+			}
+		});
+
+		$('.drop_cont .close').on('click',function(){
+			$(this).parents('.drop_cont').removeClass('active').find('.num span').text('');
+			$(this).parents('.drop_cont').find('.checklist input[type="checkbox"]').prop('checked', false); 
+			$('input, select').trigger('refresh'); 
+		});
+
+		/*
+		====================================================
+		color
+		====================================================
+		*/ 
+
+		$('.color_list').on('click','a',function(){
+			var color = $(this).data('color');
+
+			$('.color_list a').removeClass('active');
+			$(this).addClass('active');
+
+			$('.add_color a.active').css('background', color);
+		});
+
+		$('.add_color').on('click','a',function(){
+			$('.add_color a').removeClass('active');
+			$(this).addClass('active');
+		});
+
+		$('.radio_block').on('click', 'a', function(){
+			$('.radio_block a').removeClass('active');
+			$(this).addClass('active')
+		});
+
+		$('.add_color_btn').on('click',function(){
+			var num_color = $(this).parents('.add_color').find('li.color_block').length;
+
+			if(6 > num_color) {
+				$("<li class='color_block'><a  class='color-box' href='javascript:void(0)'></a></li>").insertBefore($(this).parent());
+				$(this).parents('.color_cont').addClass('active').find('.num span').text(num_color + 1);
+			}
+		});
+
+		$('.color_cont').on('click','i.close',function(){
+			$('.add_color .color_block').remove();
+		});
+
+		/*
+		======================================================
+		filtres
+		======================================================
+		*/
+
+		$('.more_filtres').click(function(){
+			$('.filter_cont .second').slideToggle();
+		});
+
+		$('.size a.btn').click(function(){
+			$(this).toggleClass('active');
 		});
 });
 
@@ -236,6 +311,7 @@ function productsTabs() {
 		$(this).addClass('active');
 		$('.products_tab').removeClass('active');
 		$(products).addClass('active');
+		$('input, select').trigger('refresh'); 
 
 	});
 }
@@ -271,8 +347,22 @@ function DropDownTabs() {
 }
 
 function filtresDropDown() {
-	$('.filters > ul > li > a ').on('click',function(){
+	$('.filter_cont > ul > li > a ').on('click',function(){
 		$(this).parent().siblings().find('.drop_down').slideUp();
+		$(this).parents('ul').siblings().find('.drop_down').slideUp();
 		$(this).parent().find('.drop_down').slideToggle();
 	});
+}
+
+function DropDownBlockTab() {
+	$('.click-nav > li > a').on('click',function(){
+		$(this).parent().siblings().find('i').removeClass('active');
+		$(this).parents('.block_tab').siblings().find('i').removeClass('active');
+		$(this).parents('ul').siblings().find('i').removeClass('active');
+		$(this).find('i').toggleClass('active');
+		$(this).parents('li').siblings().find('.drop_down').slideUp();
+		$(this).parents('.block_tab').siblings().find('.drop_down').slideUp();
+		$(this).parents('ul').siblings().find('.drop_down').slideUp();
+		$(this).parents('li').find('.drop_down').slideToggle();
+	});	
 }

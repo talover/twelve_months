@@ -113,6 +113,13 @@
 	}
 
 	#header_fixed {display: none!important;}
+
+	#filters_block {
+		&.active {
+			position: relative;
+			top: auto;
+		}
+	}
 }
 @media (max-width:1024px) {
 	#header {
@@ -304,12 +311,16 @@
 
 	#filters_block {
 		.category {
-			float: none;
+			margin-bottom: 10px;
 		}
 
 	    .filters {
 	    	margin: 20px 0 0 5px;
 	    	clear: both;
+
+	    	.filter_cont {
+	    		margin: 0 110px 0 60px;
+	    	}
 
 	    	ul {
 	    		li {
@@ -331,6 +342,23 @@
 	#products-tab-3 {display: none!important;}
 
 	#products-tab-2 {display: block!important;}
+
+	.products_tab {
+	    .line_block_table {
+	        a {
+	            text-decoration: none;
+	            color: #000;
+	        }
+
+	        & > tbody  > tr > td {
+	        	display: none;
+
+	        	&:first-child {
+	        		display: block;
+	        	}
+	        }
+	    }
+	}
 }
 @media (max-width:900px) {
 
@@ -597,6 +625,7 @@
 		    	position: relative;
 		    	overflow: hidden;
 		    	clear: both;
+		    	width: 100%;
 		    }
 
 		    & > .f-left {
