@@ -421,12 +421,16 @@
 	}// END #last_viewed
 
 	#footer {
-	    ul {
-	        li {
-	            margin-right: 20px;
-	            float: left;
-	        }
-	    }
+		.main_container {
+		    & > ul {
+		        & > li {
+		        	width: 95%!important;
+		        	float: none!important;
+		        	margin: auto;
+		        }
+		    }
+		}
+
 	}// END #footer
 
 	#contacts_block {
@@ -510,22 +514,9 @@
 	        }
 	    }
 	}// END #buy_as_you_wish
-
-	#footer {
-	    ul {
-	        li {
-	            margin-right: 10px;
-	            float: left;
-	        }
-	    }
-	}// END #footer
 }
 
 @media (max-width:620px) {
-
-	#main {
-		padding-bottom: 10px;
-	}
 
 	#header {
 		header {
@@ -573,9 +564,6 @@
 	    }
 	}// END #buy_as_you_wish
 
-	#footer {
-		display: none;
-	}// END #footer
 }
 
 @media (max-width:489px) {
@@ -657,10 +645,6 @@
 	        }
 	    }
 	}// END #buy_as_you_wish
-
-	#footer {
-		display: none;
-	}// END #footer
 
 	#second_baner {
 	    .item {

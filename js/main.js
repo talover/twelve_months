@@ -71,6 +71,10 @@ $(document).ready(function() {
 			$('input, select').trigger('refresh'); 
 		});
 
+		$('a.busket').click(function(){
+			$(this).toggleClass('active');
+		})
+
 		/*
 		====================================================
 		color
