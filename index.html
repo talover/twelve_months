@@ -12,13 +12,13 @@
 		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 		<link rel="stylesheet" href="css/normalize.min.css">
-<!--         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/responsive.css">
- -->
+<!-- 
 		<link rel="stylesheet/less" type="text/css" href="css/main.less">
 		<link rel="stylesheet/less" type="text/css" href="css/responsive.less">
 		<script src="js/vendor/less.js" type="text/javascript"></script>
-		
+		 -->
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 		<script type="text/javascript">
@@ -3675,56 +3675,112 @@
 				</nav>
 			</section><!--#nav_mob-->
 
-			<section id="baner_block" class="owl-carousel">
+            <header id="header_fixed">
+                <div class="main_container clearfix">
+                    <div class="f_left">
+                        <a class="logo" href="index.html"></a>
 
-				<div class="item" style="background-image:url(img/pic_1.png);">
-					<article class="bottom right">
-						Ближайший к вам магазин:<br/>  ул. Ташкентская, 516
-					</article>
+                        <ul>
+                            <li>
+                                <select>
+                                    <option>Алматы</option>
+                                    <option>Киев</option>
+                                    <option>Москва</option>
+                                </select>
+                            </li>
+                            <li>
+                                <a id="goTop" class="anchorLink" href="#main"><i></i><span>Вверх</span></a>
+                            </li>
+                            <li>
+                                <a class="back" href="#"><i></i><span>К предыдущей страниц</span>е</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="f_right">
+                        <ul>
+                            <li class="selected">
+                                <p>
+                                    <!-- <i></i> -->
+                                    Выбрано: 
+                                    <a href="#">1 товар</a>
+                                </p>
+                            </li>
+                            <li class="busket">
+                                <p>
+                                    <!-- <i></i> -->
+                                    В корзине нет товаров
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header><!--END #header_fixed-->
+            
+			<section id="baner_container" class="clearfix">
+				<div class="f_left">
+					<div class="baner" style="background-image:url(img/pic_1.png);">
+							<article class="top left">
+								Новая коллекция<br/> обоев Limonta    
+							</article>
+							<article class="left bottom">
+								Эксклюзив
+							</article>
+					</div>
 				</div>
+				<div class="f_right">
+					<section id="baner_block" class="owl-carousel">
 
-				<div class="item" style="background-image:url(img/pic_2.png);">
-					<article class="top left">
-						Новая коллекция<br/> обоев Limonta    
-					</article>
-					<article class="left bottom">
-						Эксклюзив
-					</article>
-				</div>
+						<div class="item" style="background-image:url(img/pic_3.png);">
+							<article class="bottom right">
+								Ближайший к вам магазин:<br/>  ул. Ташкентская, 516
+							</article>
+						</div>
 
-				<div class="item" style="background-image:url(img/pic_3.png);">
-					<article class="top left">
-						Новая коллекция<br/> обоев Limonta    
-					</article>
-					<article class="left bottom">
-						Эксклюзив
-					</article>
-				</div>
+						<div class="item" style="background-image:url(img/pic_2.png);">
+							<article class="top left">
+								Новая коллекция<br/> обоев Limonta    
+							</article>
+							<article class="left bottom">
+								Эксклюзив
+							</article>
+						</div>
 
-				<div class="item" style="background-image:url(img/pic_1.png);">
-					<article class="bottom right">
-						Ближайший к вам магазин:<br/>  ул. Ташкентская, 516
-					</article>
-				</div>
+						<div class="item" style="background-image:url(img/pic_3.png);">
+							<article class="top left">
+								Новая коллекция<br/> обоев Limonta    
+							</article>
+							<article class="left bottom">
+								Эксклюзив
+							</article>
+						</div>
 
-				<div class="item" style="background-image:url(img/pic_2.png);">
-					<article class="top left">
-						Новая коллекция<br/> обоев Limonta    
-					</article>
-					<article class="left bottom">
-						Эксклюзив
-					</article>
-				</div>
+						<div class="item" style="background-image:url(img/pic_1.png);">
+							<article class="bottom right">
+								Ближайший к вам магазин:<br/>  ул. Ташкентская, 516
+							</article>
+						</div>
 
-				<div class="item" style="background-image:url(img/pic_3.png);">
-					<article class="top left">
-						Новая коллекция<br/> обоев Limonta    
-					</article>
-					<article class="left bottom">
-						Эксклюзив
-					</article>
+						<div class="item" style="background-image:url(img/pic_2.png);">
+							<article class="top left">
+								Новая коллекция<br/> обоев Limonta    
+							</article>
+							<article class="left bottom">
+								Эксклюзив
+							</article>
+						</div>
+
+						<div class="item" style="background-image:url(img/pic_3.png);">
+							<article class="top left">
+								Новая коллекция<br/> обоев Limonta    
+							</article>
+							<article class="left bottom">
+								Эксклюзив
+							</article>
+						</div>
+					</section><!--END #baner_block-->
 				</div>
-			</section><!--END #baner_block-->
+			</section>
+
 
 			<section id="buy_as_you_wish">
 				<div class="main_container clearfix">

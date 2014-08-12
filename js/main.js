@@ -130,6 +130,47 @@ $(document).ready(function() {
 		$('.size a.btn').click(function(){
 			$(this).toggleClass('active');
 		});
+
+		/*
+		====================================================
+		tenge
+		====================================================
+		*/ 
+
+
+		setTimeout(function(){
+			$('.price .jq-selectbox__select-text ,.sum .jq-selectbox__select-text').text('T');
+		},10);
+
+		
+		$('.price select , .sum select').change(function(){
+				var	tenge = $(this).parents('.jq-selectbox').find('.jq-selectbox__select-text'),
+				text = tenge.text();
+
+				if(text == 'тенге'){
+					setTimeout(function(){
+						tenge.text('T');
+					},10);
+				}
+
+				if(text == 'евро'){
+					setTimeout(function(){
+						tenge.text('E');
+					},10);
+				}
+
+				if(text == 'рубль'){
+					setTimeout(function(){
+						tenge.text('R');
+					},10);
+				}
+
+				if(text == 'долар'){
+					setTimeout(function(){
+						tenge.text('$');
+					},10);
+				}
+		});
 });
 
 
@@ -320,6 +361,10 @@ function productsTabs() {
 		$('.products_tab').removeClass('active');
 		$(products).addClass('active');
 		$('input, select').trigger('refresh'); 
+
+		setTimeout(function(){
+			$('.price .jq-selectbox__select-text ,.sum .jq-selectbox__select-text').text('T');
+		},10);
 
 	});
 }

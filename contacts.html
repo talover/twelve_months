@@ -12,12 +12,13 @@
 		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/main.css">
-
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/responsive.css">
+<!-- 
 		<link rel="stylesheet/less" type="text/css" href="css/main.less">
 		<link rel="stylesheet/less" type="text/css" href="css/responsive.less">
 		<script src="js/vendor/less.js" type="text/javascript"></script>
-		
+		 -->
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 		<script type="text/javascript">
@@ -125,7 +126,7 @@
 		<![endif]-->
 
 		<section id="main">
-			
+
 			<header id="header">
 				<div class="top_header">
 					<div class="main_container">
@@ -185,10 +186,7 @@
 							</li>
 							<li class="f-right">
 								<p>режим работы: 10:00-20:00</p>
-								<p class="place">
-									<a id="btn_map" href="javascript:void(0)">найти магазин</a>
-									возле вас
-								</p>
+								<p class="contacts"><a href="#">Контакты</a></p>
 							</li>
 						</ul>
 
@@ -2332,6 +2330,7 @@
 									</ul>
 								</div>
 							</li>
+							<li><a href="#">Сантехника</a></li>
 							<li>
 								<a class="drop" href="#">ИНСТРУМЕНТЫ</a>
 								
@@ -3398,7 +3397,7 @@
 							<li><a href="#">ДЛЯ ДОМА</a></li>
 							<li><a href="#">ДЛЯ САДА</a></li>
 							<li><a href="catalog.html">ВЕСЬ КАТАЛОГ</a></li>
-							<li><a href="#">ИНФОРМАЦИЯ</a></li>
+							
 						</ul>
 					</nav>
 				</div>
@@ -3675,6 +3674,47 @@
 					</div>
 				</nav>
 			</section><!--#nav_mob-->
+
+            <header id="header_fixed">
+                <div class="main_container clearfix">
+                    <div class="f_left">
+                        <a class="logo" href="index.html"></a>
+
+                        <ul>
+                            <li>
+                                <select>
+                                    <option>Алматы</option>
+                                    <option>Киев</option>
+                                    <option>Москва</option>
+                                </select>
+                            </li>
+                            <li>
+                                <a id="goTop" class="anchorLink" href="#main"><i></i><span>Вверх</span></a>
+                            </li>
+                            <li>
+                                <a class="back" href="#"><i></i><span>К предыдущей страниц</span>е</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="f_right">
+                        <ul>
+                            <li class="selected">
+                                <p>
+                                    <!-- <i></i> -->
+                                    Выбрано: 
+                                    <a href="#">1 товар</a>
+                                </p>
+                            </li>
+                            <li class="busket">
+                                <p>
+                                    <!-- <i></i> -->
+                                    В корзине нет товаров
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header><!--END #header_fixed-->
 
 			<section id="bread_crumbs" class="main_container">
 				<ul>
@@ -3986,76 +4026,17 @@
 			</section><!--#contacts_block-->
 		</section><!--END #main-->
 
-		<footer id="footer">
-			<div class="main_container">
-				<ul class="clearfix">
-					<li>
-						<h3>О компании «12 месяцев»</h3>
-						<p>
-							Наша компания видит свою миссию в том, 
-							чтобы обеспечить казахстанским потребителям 
-							возможность покупать качественные 
-							строительные и отделочные материалы 
-							самого широкого ассортимента по доступным 
-							ценам в комфортных условиях, тем самым 
-							помогая воплощать их мечты о красивом 
-							и уютном доме.
-						</p>
-
-						<ul class="contacts">
-							<li><i class="tel"></i>+7 727 123-45-67</li>
-							<li><i class="place"></i>улица Ташкентская, 516</li>
-							<li><i class="mail"></i>info@12m.kz</li>
-						</ul>
-					</li>
-					<li class="clearfix">
-						<h3>Карта сайта</h3>
-
-						<ul class="list f_left">
-							<li><a href="#">Для дилеров</a></li>
-							<li><a href="#">Вакансии</a></li>
-							<li><a href="#">Доставка</a></li>
-							<li><a href="#">Правовая информация</a></li>
-							<li><a href="#">Для дилеров</a></li>
-							<li><a href="#">Вакансии</a></li>
-							<li><a href="#">Доставка</a></li>
-							<li><a href="#">Правовая информация</a></li>
-						</ul>
-
-						<ul class="list f_right">
-							<li><a href="#">Для дилеров</a></li>
-							<li><a href="#">Вакансии</a></li>
-							<li><a href="#">Доставка</a></li>
-							<li><a href="#">Правовая информация</a></li>
-						</ul>
-					</li>
-					<li>
-						<h3>Оставьте отзыв</h3>
-
-						<form>
-							<div class="row">
-								<input type="text" placeholder="Ваше имя" onfocus="this.placeholder=''" onblur="this.placeholder='Ваше имя'"/>
-							</div>
-
-							<div class="row">
-								<input type="text" placeholder="Контактные данные" onfocus="this.placeholder=''" onblur="this.placeholder='Контактные данные'"/>
-							</div>
-
-							<div class="row">
-								<textarea placeholder="Ваш отзыв..." onfocus="this.placeholder=''" onblur="this.placeholder='Ваш отзыв...'"></textarea>
-							</div>
-
-							<button type="submit">Отправить</button>
-						</form>
-					</li>
-				</ul>
-			</div>
-			<div class="bottom_block">
-				<div class="main_container">
-					2014 год, компания 12 месяцев. Все права защищены. 
-				</div>
-			</div>
-		</footer><!--END #footer-->
+        <footer id="footer_min">
+            <div class="main_container">
+                <ul class="clearfix">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Правовая информция</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Информация для дилеров</a></li>
+                    <li><a href="#">Доставка</a></li>
+                </ul>
+            </div>
+        </footer><!--END #footer-->
 
 		<section id="order_call" class="popup_block">
 			Тут  будет попап обратного звонка,  дизайна нет покачто ,  как будет  заверстаю

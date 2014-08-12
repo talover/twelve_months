@@ -9,11 +9,21 @@
   #nav nav ul li a {
     font-size: 10pt;
   }
+  #baner_container > div .baner {
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  #baner_container > div .baner article {
+    font-size: 32pt;
+  }
   #baner_block .item {
     height: 350px;
   }
   #baner_block .item article {
-    font-size: 32pt;
+    font-size: 17pt;
   }
   #baner_block .owl-controls {
     max-width: 1024px;
@@ -48,6 +58,29 @@
   #last_viewed .f-right {
     width: 55%;
   }
+  #item_block .item_viewer .f_left {
+    width: 450px;
+    height: 450px;
+  }
+  #item_block .item_viewer article {
+    margin: 0 0 0 470px;
+  }
+  #item_block .item_viewer article .buy {
+    font-size: 30pt;
+  }
+  .desktop {
+    display: none;
+  }
+  .medium {
+    display: block;
+  }
+  #header_fixed {
+    display: none !important;
+  }
+  #filters_block.active {
+    position: relative;
+    top: auto;
+  }
 }
 @media (max-width: 1024px) {
   #header .content .search p .tel {
@@ -63,11 +96,34 @@
   #nav nav ul li a {
     font-size: 9pt;
   }
+  #baner_container > div .baner {
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  #baner_container > div .baner article {
+    font-size: 30pt;
+  }
+  #baner_container > div .baner article.bottom {
+    bottom: 15px;
+  }
+  #baner_container > div .baner article.right {
+    right: 15px;
+    text-align: right;
+  }
+  #baner_container > div .baner article.top {
+    top: 15px;
+  }
+  #baner_container > div .baner article.left {
+    left: 15px;
+  }
   #baner_block .item {
     height: 300px;
   }
   #baner_block .item article {
-    font-size: 26pt;
+    font-size: 16pt;
   }
   #baner_block .item article.bottom {
     bottom: 15px;
@@ -100,7 +156,7 @@
     height: 250px;
   }
   #second_baner .item article {
-    font-size: 26pt;
+    font-size: 20pt;
   }
   #second_baner .item article.bottom {
     bottom: 15px;
@@ -126,6 +182,85 @@
   }
   #last_viewed .f-right {
     width: 50%;
+  }
+  #item_block .item_viewer .f_left {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  #item_block .item_viewer .f_left .zoomPup,
+  #item_block .item_viewer .f_left .zoomWindow {
+    display: none !important;
+  }
+  #item_block .item_viewer .f_left .jqzoom {
+    margin-bottom: 25px;
+    overflow: hidden;
+  }
+  #item_block .item_viewer .f_left .jqzoom img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+  }
+  #item_block .item_viewer article {
+    width: auto;
+    position: relative;
+    margin: 0;
+    clear: both;
+  }
+  .medium {
+    display: none;
+  }
+  .item_viewer .medium {
+    display: block;
+  }
+  .mob {
+    display: block;
+  }
+}
+@media (max-width: 980px) {
+  #item_block .item_info .f_left,
+  #item_block .item_info .f_right {
+    width: 100%;
+    padding: 0;
+  }
+  #item_block .item_info .f_left {
+    margin-bottom: 25px;
+  }
+  #filters_block .category {
+    margin-bottom: 10px;
+  }
+  #filters_block .filters {
+    margin: 20px 0 0 5px;
+    clear: both;
+  }
+  #filters_block .filters .filter_cont {
+    margin: 0 110px 0 60px;
+  }
+  #filters_block .filters ul li {
+    padding-bottom: 10px;
+  }
+  #filters_block .filters .tabs_list {
+    display: none;
+  }
+  #filters_block .filters .more {
+    display: none;
+  }
+  #products-tab-1,
+  #products-tab-3 {
+    display: none !important;
+  }
+  #products-tab-2 {
+    display: block !important;
+  }
+  .products_tab .line_block_table a {
+    text-decoration: none;
+    color: #000;
+  }
+  .products_tab .line_block_table > tbody  > tr > td {
+    display: none;
+  }
+  .products_tab .line_block_table > tbody  > tr > td:first-child {
+    display: block;
   }
 }
 @media (max-width: 900px) {
@@ -166,9 +301,10 @@
     width: 100%;
     margin-top: 10px;
   }
-  #footer ul li {
-    margin-right: 20px;
-    float: left;
+  #footer .main_container > ul > li {
+    width: 95% !important;
+    float: none !important;
+    margin: auto;
   }
   #contacts_block .f_right {
     float: none;
@@ -227,15 +363,8 @@
     line-height: 40px;
     font-size: 12pt;
   }
-  #footer ul li {
-    margin-right: 10px;
-    float: left;
-  }
 }
 @media (max-width: 620px) {
-  #main {
-    padding-bottom: 10px;
-  }
   #header header p {
     display: none;
   }
@@ -253,9 +382,6 @@
     height: 30px;
     line-height: 30px;
     font-size: 10pt;
-  }
-  #footer {
-    display: none;
   }
 }
 @media (max-width: 489px) {
@@ -290,6 +416,7 @@
     position: relative;
     overflow: hidden;
     clear: both;
+    width: 100%;
   }
   #header .content > .f-left {
     margin: 0 0 10px 10% !important;
@@ -308,9 +435,6 @@
     height: 30px;
     line-height: 30px;
     font-size: 6pt;
-  }
-  #footer {
-    display: none;
   }
   #second_baner .item {
     height: 200px;
@@ -333,11 +457,34 @@
   #second_baner .item article span {
     font-size: 60pt;
   }
+  #baner_container > div .baner {
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  #baner_container > div .baner article {
+    font-size: 16pt;
+  }
+  #baner_container > div .baner article.bottom {
+    bottom: 10px;
+  }
+  #baner_container > div .baner article.right {
+    right: 10px;
+    text-align: right;
+  }
+  #baner_container > div .baner article.top {
+    top: 10px;
+  }
+  #baner_container > div .baner article.left {
+    left: 10px;
+  }
   #baner_block .item {
     height: 250px;
   }
   #baner_block .item article {
-    font-size: 16pt;
+    font-size: 14pt;
   }
   #baner_block .item article.bottom {
     bottom: 10px;
